@@ -5,241 +5,402 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Portfolio Website</title>
-    <link rel="icon" href="images/internet.png">
+    <title>Sangam Suman | AI & ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e674bba739.js" crossorigin="anonymous"></script>
-    
-
 </head>
 
 <body>
+
+    <!-- ─── HERO ─── -->
     <div id="header">
+        <canvas id="particles"></canvas>
         <div class="container">
             <nav>
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times" id="close-menu"></i>
                 </ul>
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" id="open-menu"></i>
             </nav>
+
             <div class="header-text">
-                <p>Artificial Intelligence</p>
+                <p><span id="typing-text"></span><span class="cursor">|</span></p>
                 <h1>Hi, I'm <span>Sangam.</span><br>Suman</h1>
+                <p class="tagline">Building intelligent systems that bridge<br>the gap between data and decisions.</p>
             </div>
+        </div>
+
+        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+            <span>Scroll</span>
+            <div class="scroll-chevron"></div>
         </div>
     </div>
 
+    <div class="section-divider"></div>
 
-    <!-- ----------ABOUT---------- -->
+    <!-- ─── ABOUT ─── -->
     <div id="about">
         <div class="container">
             <div class="row">
-                <div class="about-col-1">
-                    <img src="images/user1.png">
+                <div class="about-col-1 reveal">
+                    <img src="images/user1.png" alt="Sangam Suman">
                 </div>
-                <div class="about-col-2">
+                <div class="about-col-2 reveal reveal-delay-1">
                     <h1 class="sub-title">About Me</h1>
                     <p class="justify-cont">
-                        I am a Machine Learning enthusiast from Chandigarh, India, specializing in Artificial Intelligence and Machine Learning. 
-                        Currently, I am a Subject Matter Expert in Computer Science at Chegg India, where I apply my expertise in C++, Python, and AI technologies.<br>
-                        
-                        <br> My passion for AI and ML has driven me to excel academically, with a B.E.(Hons.) in Computer Science from Chandigarh University, holding a CGPA of 8.53.
+                        I am a Machine Learning enthusiast from Chandigarh, India, specializing in Artificial
+                        Intelligence and Machine Learning. Currently, I am a Subject Matter Expert in Computer Science
+                        at Chegg India, where I apply my expertise in C++, Python, and AI technologies.
 
-                        <br><br>My academic achievements include certifications from Coursera, DeepLearning.AI, Duke University, and NPTEL, along with publishing research papers in IEEE and Scopus. 
-                        <br><br>I have also won 1st position in hackathons like Manthan at IIT Indore and participated in competitions such as Flipkart Grid 5.0.
+                        <br><br>My passion for AI and ML has driven me to excel academically, with a B.E.(Hons.) in
+                        Computer Science from Chandigarh University, holding a CGPA of 8.53.
 
-                        <br><br>Beyond academia and work, I am passionate about journaling, debating, reading novels, trading, and sketching. I am committed to leveraging AI to create innovative solutions that make a meaningful impact on the world.
+                        <br><br>My academic achievements include certifications from Coursera, DeepLearning.AI, Duke
+                        University, and NPTEL, along with publishing research papers in IEEE and Scopus.
 
+                        <br><br>I have also won 1st position in hackathons like Manthan at IIT Indore and participated
+                        in competitions such as Flipkart Grid 5.0.
 
+                        <br><br>Beyond academia and work, I am passionate about journaling, debating, reading novels,
+                        trading, and sketching. I am committed to leveraging AI to create innovative solutions that make
+                        a meaningful impact on the world.
                     </p>
+
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
-                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
-                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                        <p class="tab-links active-link" onclick="openTab('skills', event)">Skills</p>
+                        <p class="tab-links" onclick="openTab('experience', event)">Experience</p>
+                        <p class="tab-links" onclick="openTab('education', event)">Education</p>
                     </div>
 
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>Machine Learning & AI Specialist</span><br>Proficient in developing innovative ML algorithms :-<br><br>
-
-                             Supervised ML, Unsupervised ML, Logistic regression, CNN, & RNN. </li>
-                            <li><span>Programming Languages & Libraries </span><br>Python, pandas c++.</li>
-                            <li><span>Web Development</span><br>Experience with front-end using Bootstrap web development.</li>
-                                                    
+                            <li>
+                                <span>Machine Learning & AI</span>
+                                Supervised & Unsupervised ML, Logistic Regression, CNN, RNN — building innovative
+                                algorithms from the ground up.
+                            </li>
+                            <li>
+                                <span>Programming Languages & Libraries</span>
+                                Python, C++, Pandas, NumPy, Scikit-learn, TensorFlow.
+                            </li>
+                            <li>
+                                <span>Web Development</span>
+                                Front-end development with HTML, CSS, Bootstrap, and Streamlit for ML apps.
+                            </li>
                         </ul>
                     </div>
-                    
-                    
-
 
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>March 2024 - Present</span><br>Subject Matter Expert in Computer Science at Chegg India Private Limited, India</li>
-                            <li><span>Jan 2023 - March 2023</span><br>Machine Learning Intern at Edunet Foundation sponsored by IBM, India</li>
-                            <li><span>June 2023 - July 2023</span><br>Participant in Intel Digital Readiness Workshop: AI for Future Workforce, India</li>
+                            <li>
+                                <span>March 2024 – Present</span>
+                                Subject Matter Expert in Computer Science at Chegg India Private Limited, India.
+                            </li>
+                            <li>
+                                <span>Jan 2023 – March 2023</span>
+                                Machine Learning Intern at Edunet Foundation sponsored by IBM, India.
+                            </li>
+                            <li>
+                                <span>June 2023 – July 2023</span>
+                                Participant in Intel Digital Readiness Workshop: AI for Future Workforce, India.
+                            </li>
                         </ul>
                     </div>
 
                     <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2021 - Present</span><br>B.E.(Hons.) in Computer Science with specialization in AI & ML at Chandigarh University, CGPA: 8.53</li>
-                         <li><span>2018 - 2019</span><br>Intermediate (CBSE) at Ashok Memorial Public School, Haryana, Percentage: 74.8%</li>
-                        <li><span>2016 - 2017</span><br>Matriculation (CBSE) at Ashok Memorial Public School, Haryana, CGPA: 9.4</li>
-                    </ul>
+                        <ul>
+                            <li>
+                                <span>2021 – Present</span>
+                                B.E.(Hons.) in Computer Science — AI & ML, Chandigarh University. CGPA: 8.53
+                            </li>
+                            <li>
+                                <span>2018 – 2019</span>
+                                Intermediate (CBSE) at Ashok Memorial Public School, Haryana. Percentage: 74.8%
+                            </li>
+                            <li>
+                                <span>2016 – 2017</span>
+                                Matriculation (CBSE) at Ashok Memorial Public School, Haryana. CGPA: 9.4
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="section-divider"></div>
 
-    
-    <!-- ----------PORTFOLIO--------- --> 
+    <!-- ─── PORTFOLIO ─── -->
     <div id="portfolio">
         <div class="container">
-            <h1 class="sub-title">My Works</h1>
+            <h1 class="sub-title reveal">My Works</h1>
             <div class="work-list">
-                <div class="work">
-                    <img src="images/work-1.png" alt="">
+
+                <div class="work reveal reveal-delay-1">
+                    <img src="images/work-1.png" alt="IEEE Publication">
                     <div class="layer">
-                        
-                        <h2><br>IEEE</h2>
-                        <p>Machine Learning-Based System for Admission and Jobs Prediction in Engineering and Technology Sector</p>
-                        <a href="https://ieeexplore.ieee.org/document/10486533"><i class="fas fa-external-link-alt"></i></a>
+                        <h2>IEEE Publication</h2>
+                        <p>Machine Learning-Based System for Admission and Jobs Prediction in Engineering and Technology Sector.</p>
+                        <a href="https://ieeexplore.ieee.org/document/10486533" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="images/work-2.png" alt="">
+
+                <div class="work reveal reveal-delay-2">
+                    <img src="images/work-2.png" alt="Moodle Emotion Detection">
                     <div class="layer">
                         <h2>Moodle</h2>
-                        <p> Web application that uses machine learning algorithms to detect emotions in real-time using text.</p>
-                        <a href="https://moodle-on.streamlit.app/"><i class="fas fa-external-link-alt"></i></a>
+                        <p>Web application that uses machine learning algorithms to detect emotions in real-time using text analysis.</p>
+                        <a href="https://moodle-on.streamlit.app/" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="images/work-3.png" alt="">
+
+                <div class="work reveal reveal-delay-3">
+                    <img src="images/work-3.png" alt="AquaFlow Hackathon">
                     <div class="layer">
-                        <br>
-                        <p>Among the 269 participants, top 10 teams were invited at IIT Indore to present their Idea to the panelist.My solution triumphed and we won the 1st prize</p>
-                        <a href="https://github.com/Sangam-Suman/AquaFlow/tree/main"><i class="fas fa-external-link-alt"></i></a>
+                        <h2>AquaFlow</h2>
+                        <p>Among 269 participants, top 10 teams were invited to IIT Indore. My solution triumphed and won 1st prize at Manthan hackathon.</p>
+                        <a href="https://github.com/Sangam-Suman/AquaFlow/tree/main" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
+
             </div>
-            <a href="https://github.com/Sangam-Suman" class="btn">See more</a>
+            <a href="https://github.com/Sangam-Suman" target="_blank" rel="noopener" class="btn">See More on GitHub</a>
         </div>
     </div>
 
-    <!-- ----------CONTACT---------- -->
+    <div class="section-divider"></div>
+
+    <!-- ─── CONTACT ─── -->
     <div id="contact">
         <div class="container">
             <div class="row">
-                <div class="contact-left">
+                <div class="contact-left reveal">
                     <h1 class="sub-title">Contact Me</h1>
                     <p><i class="fas fa-paper-plane"></i> sangamsuman.ss@gmail.com</p>
                     <p><i class="fas fa-phone-square-alt"></i> +91-8882167298</p>
                     <div class="social-icons">
-                        <a href="https://github.com/Sangam-Suman"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/SangamSuman15"><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.instagram.com/sangam_suman_/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/sangamsuman/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Sangam-Suman" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/SangamSuman15" target="_blank" rel="noopener" aria-label="Twitter/X">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sangam_suman_/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sangamsuman/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                     <a href="./images/Sangam Suman_Resume.pdf" download class="btn btn2">Download CV</a>
                 </div>
-                <div class="contact-right">
-                    <form method="post" id="form">
+
+                <div class="contact-right reveal reveal-delay-1">
+                    <form id="contact-form">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" id="submit" name="btn" class="btn btn3">Submit</button>
+                        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <div id="form-message" class="form-message"></div>
+                        <button type="submit" id="submit-btn" class="btn btn3">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
+
         <div class="copyright">
-            <p>Made with 💓 by Sangam Suman </p>
+            <p>Crafted with passion by <strong>Sangam Suman</strong> &nbsp;·&nbsp; AI &amp; ML Engineer</p>
         </div>
     </div>
 
 
     <script>
-        // Update the URL with the deployment URL from your published Google Apps Script
-        let url = 'https://script.google.com/macros/s/AKfycbzAMBSfigT1app3JgTUyJxrmbWWDV4JgNIZym6s27B5UDPwZFBCfvtfm1XOTD6CcFs7Hg/exec'
-        let form = document.querySelector('#form');
+        // ─── Particle Canvas ───
+        (function () {
+            const canvas = document.getElementById('particles');
+            const ctx = canvas.getContext('2d');
 
-    form.addEventListener("submit", (e) => {
-        e.target.btn.innerHTML="Submitting..";
-        let formd = new FormData(form);
-        fetch(url, {
-            method: "POST",
-            body: formd
-        })
-        .then((res) => res.text())
-        .then((finalRes) =>{
-            e.target.btn.innerHTML="Submitted";
-            console.log(finalRes);
-            form.reset();
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
 
-        })
-        .catch((error) => console.error('Error:', error)); // Handle any error that occurs during the fetch
+            const count = 110;
+            const particles = Array.from({ length: count }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                r: Math.random() * 1.4 + 0.3,
+                dx: (Math.random() - 0.5) * 0.35,
+                dy: (Math.random() - 0.5) * 0.35,
+                opacity: Math.random() * 0.55 + 0.15,
+                isPink: Math.random() > 0.82
+            }));
 
-        e.preventDefault();
-    });
-// JavaScript for handling the mobile navigation menu
-document.querySelector('.fas.fa-bars').addEventListener('click', function () {
-    const navMenu = document.querySelector('nav ul');
-    if (navMenu.classList.contains('show')) {
-        navMenu.classList.remove('show');
-    } else {
-        navMenu.classList.add('show');
-    }
-});
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-// Add event listeners to each menu item to handle scrolling and closing the menu
-const navLinks = document.querySelectorAll('nav ul li a');
-for (const link of navLinks) {
-    link.addEventListener('click', function (event) {
-        event.preventDefault();
-        const targetSection = document.querySelector(link.getAttribute('href'));
-        const navMenu = document.querySelector('nav ul');
-        const headerHeight = document.getElementById('header').offsetHeight;
-        const sectionHeight = targetSection.offsetHeight;
-        const windowHeight = window.innerHeight;
-        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
-        const scrollToPosition = targetPosition - (windowHeight - sectionHeight) / 2 ;
-        
-        navMenu.classList.remove('show');
-        
-        window.scroll({
-            top: scrollToPosition,
-            behavior: 'smooth'
+                // Connections
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                        if (d < 110) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(255,255,255,${0.045 * (1 - d / 110)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Dots
+                for (const p of particles) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = p.isPink
+                        ? `rgba(255,0,79,${p.opacity})`
+                        : `rgba(255,255,255,${p.opacity})`;
+                    ctx.fill();
+
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+                }
+
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+
+        // ─── Typing Effect ───
+        (function () {
+            const texts = ['Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'AI Researcher'];
+            const el = document.getElementById('typing-text');
+            let ti = 0, ci = 0, deleting = false;
+
+            function type() {
+                const current = texts[ti];
+                el.textContent = current.substring(0, ci);
+
+                if (!deleting) {
+                    ci++;
+                    if (ci > current.length) {
+                        deleting = true;
+                        setTimeout(type, 2200);
+                        return;
+                    }
+                    setTimeout(type, 95);
+                } else {
+                    ci--;
+                    if (ci < 0) {
+                        deleting = false;
+                        ti = (ti + 1) % texts.length;
+                    }
+                    setTimeout(type, 55);
+                }
+            }
+            type();
+        })();
+
+        // ─── Scroll Reveal ───
+        (function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('visible');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        })();
+
+        // ─── Navigation ───
+        const navMenu = document.getElementById('nav-menu');
+
+        document.getElementById('open-menu').addEventListener('click', () => {
+            navMenu.classList.add('show');
         });
-    });
-}
 
+        document.getElementById('close-menu').addEventListener('click', () => {
+            navMenu.classList.remove('show');
+        });
 
-    var tabLinks = document.getElementsByClassName('tab-links');
-    var tabContents = document.getElementsByClassName('tab-contents');
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                navMenu.classList.remove('show');
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
 
-    function openTab(tabName) {
-        for (tabLink of tabLinks) {
-            tabLink.classList.remove('active-link');
+        // ─── Tab System ───
+        var tabLinks = document.getElementsByClassName('tab-links');
+        var tabContents = document.getElementsByClassName('tab-contents');
+
+        function openTab(tabName, event) {
+            for (var t of tabLinks) t.classList.remove('active-link');
+            for (var c of tabContents) c.classList.remove('active-tab');
+            event.currentTarget.classList.add('active-link');
+            document.getElementById(tabName).classList.add('active-tab');
         }
-        for (tabContent of tabContents) {
-            tabContent.classList.remove('active-tab');
-        }
-        event.currentTarget.classList.add('active-link');
-        document.getElementById(tabName).classList.add('active-tab');
-    }
 
-    
-    
-    
+        // ─── Contact Form ───
+        (function () {
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzAMBSfigT1app3JgTUyJxrmbWWDV4JgNIZym6s27B5UDPwZFBCfvtfm1XOTD6CcFs7Hg/exec';
+            const form = document.getElementById('contact-form');
+            const btn = document.getElementById('submit-btn');
+            const msg = document.getElementById('form-message');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                btn.disabled = true;
+                btn.textContent = 'Sending…';
+                msg.className = 'form-message';
+
+                fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                    .then(res => res.text())
+                    .then(() => {
+                        btn.textContent = 'Message Sent!';
+                        msg.textContent = '✓ Thank you! Your message has been sent successfully. I\'ll get back to you soon.';
+                        msg.className = 'form-message success';
+                        form.reset();
+                        setTimeout(() => {
+                            btn.textContent = 'Send Message';
+                            btn.disabled = false;
+                            msg.className = 'form-message';
+                        }, 5000);
+                    })
+                    .catch(() => {
+                        btn.textContent = 'Send Message';
+                        btn.disabled = false;
+                        msg.textContent = '✕ Something went wrong. Please try emailing me directly at sangamsuman.ss@gmail.com';
+                        msg.className = 'form-message error';
+                    });
+            });
+        })();
     </script>
-    
-</body>
 
+</body>
 </html>
