@@ -376,11 +376,12 @@
                 btn.textContent = 'Sending…';
                 msg.className = 'form-message';
 
+                // mode: 'no-cors' is required for Google Apps Script — response will be opaque
                 fetch(scriptURL, {
                     method: 'POST',
-                    body: new FormData(form)
+                    body: new FormData(form),
+                    mode: 'no-cors'
                 })
-                    .then(res => res.text())
                     .then(() => {
                         btn.textContent = 'Message Sent!';
                         msg.textContent = '✓ Thank you! Your message has been sent successfully. I\'ll get back to you soon.';
