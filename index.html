@@ -374,6 +374,15 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
+                // Block submissions using the owner's own email
+                const enteredEmail = form.email.value.trim().toLowerCase();
+                if (enteredEmail === 'sangamsuman.ss@gmail.com') {
+                    msg.textContent = '😄 Nice try! Using the owner\'s own email? That\'s bold. Try yours instead.';
+                    msg.className = 'form-message error';
+                    btn.disabled = false;
+                    return;
+                }
+
                 btn.disabled = true;
                 btn.textContent = 'Sending…';
                 msg.className = 'form-message';
